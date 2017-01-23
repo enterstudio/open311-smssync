@@ -6,7 +6,7 @@ open311-smssync
 
 smssync transport for open311 messages
 
-*Note!:It highly adviced tovstart smssync in separate process for optiomal performance*
+*Note!:It highly adviced to start smssync in separate process for optiomal performance*
 
 ## Requirements
 - [MongoDB 3.2+](https://www.mongodb.com/)
