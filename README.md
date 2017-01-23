@@ -20,6 +20,8 @@ $ npm install --save open311-smssync
 
 ## Usage
 ```js
+const express = require('express');
+let app = express();
 const mongoose = require('mongoose');
 const Message = require('open311-messages')(<options>);
 const smssync = require('open311-smssync');
@@ -32,6 +34,11 @@ smssync.queue(message);
 //start smssync worker(s) in background process(s)
 //to process and send queued message(s) as smssync notification(s)
 smssync.start();
+
+
+//in your main process use smssync router
+app.use(smssync.router);
+app.listen();
 ```
 
 ## Options
