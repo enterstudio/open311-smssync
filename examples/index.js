@@ -1,5 +1,8 @@
 'use strict'
 
+//Note! you must have configure smssync to use this endpoint
+//i.e http://localhost:7000
+//with secret smssync unless changed
 
 //dependencies
 const mongoose = require('mongoose');
