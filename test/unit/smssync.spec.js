@@ -7,6 +7,13 @@ const expect = require('chai').expect;
 const faker = require('faker');
 const Message = require('open311-messages')();
 const smssync = require(path.join(__dirname, '..', '..', 'lib', 'smssync'));
+smssync.options = {
+  transport: 'open311-smssync',
+  queueName: 'smssync',
+  from: 'open311',
+  to: 'open311',
+  reply: 'Thanks reporting. We are working on it.'
+};
 smssync.Message = Message;
 const TRANSPORT_NAME = 'open311-smssync';
 
@@ -36,7 +43,7 @@ describe('smssync handlers', function () {
       };
       /*jshint camelcase:true*/
 
-      smssync.onReceive(sms, function (error, message) {
+      smssync.onReceive(sms, function (error, reply, message) {
         //assert
         expect(error).to.not.exist;
         expect(message).to.exist;

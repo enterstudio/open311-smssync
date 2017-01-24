@@ -30,7 +30,9 @@ const noop = function () {};
 exports.defaults = {
   timeout: 5000,
   concurrency: 10,
-  from: 'open311'
+  from: 'open311',
+  to: 'open311',
+  reply: 'Thanks reporting. We are working on it.'
 };
 
 
@@ -103,6 +105,7 @@ exports.init = function () {
       require(path.join(__dirname, 'lib', 'smssync'));
     handlers.Message = exports.Message;
     handlers._queue = exports._queue;
+    handlers.options = exports.options;
     exports.smssync = smssync(_.merge({}, exports.options, handlers));
   }
 
