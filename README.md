@@ -62,6 +62,10 @@ $ npm test
 ## Contribute
 It will be nice, if you open an issue first so that we can know what is going on, then, fork this repo and push in your ideas. Do not forget to add a bit of test(s) of what value you adding.
 
+## TODO
+- [ ] notify on delivery report
+- [ ] notify on message queued
+
 ## Licence
 The MIT License (MIT)
 

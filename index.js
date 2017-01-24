@@ -106,7 +106,10 @@ exports.init = function () {
       require(path.join(__dirname, 'lib', 'smssync'));
     handlers.Message = exports.Message;
     handlers._queue = exports._queue;
-    handlers.options = exports.options;
+    handlers.options = _.merge({}, exports.options, {
+      queueName: exports.queueName,
+      transport: exports.transport
+    });
     exports.smssync = smssync(_.merge({}, exports.options, handlers));
   }
 
