@@ -32,7 +32,8 @@ exports.defaults = {
   concurrency: 10,
   from: 'open311',
   to: 'open311',
-  reply: 'Thanks reporting. We are working on it.'
+  reply: 'Thanks for reporting. We are working on it.',
+  receiveQueue: 'issue'
 };
 
 
