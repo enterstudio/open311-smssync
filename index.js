@@ -246,25 +246,25 @@ exports.stop = function stop(done) {
  * @public
  * @example
  *
- * const push = require('open311-smssync');
- * push.start();
+ * const smssync = require('open311-smssync');
+ * smssync.start();
  * 
  */
 exports.start = function () {
 
-  //ensure push is initialized
+  //ensure smssync is initialized
   exports.init();
 
   //reference open311-message model
   const Message = exports.Message;
 
   //register worker for processing message 
-  //and send it as push notification
+  //and send it as smssync notification
   const { concurrency } = exports.options;
   exports._queue.process(exports.queueName, concurrency, Message.process);
 
   //listen for process termination
-  //and gracefull shutdown push worker queue
+  //and gracefull shutdown smssync worker queue
   process.once('SIGTERM', function ( /*signal*/ ) {
     exports._queue.shutdown(function ( /*error*/ ) {
       process.exit(0);

@@ -4,8 +4,17 @@
 //dependencies
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/open311-smssync');
+
 const express = require('express');
 let app = express();
+
+//listen to received sms
+const kue = require('kue');
+const queue = kue.createQueue();
+queue.process('issue', function (job, done) {
+  console.log('receiving new issue', job.data);
+  done();
+});
 
 const sms = require('open311-smssync');
 sms.start();
