@@ -3,16 +3,19 @@
 //dependencies
 const path = require('path');
 const _ = require('lodash');
+const queue = require('kue').createQueue();
 const expect = require('chai').expect;
 const faker = require('faker');
 const Message = require('open311-messages')();
 const smssync = require(path.join(__dirname, '..', '..', 'lib', 'smssync'));
+smssync._queue = queue;
 smssync.options = {
   transport: 'open311-smssync',
   queueName: 'smssync',
+  receiveQueue: 'issue',
   from: 'open311',
   to: 'open311',
-  reply: 'Thanks reporting. We are working on it.'
+  reply: 'Thanks reporting. We are working on it.',
 };
 smssync.Message = Message;
 const TRANSPORT_NAME = 'open311-smssync';
