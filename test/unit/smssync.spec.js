@@ -44,6 +44,13 @@ describe('smssync handlers', function () {
       /*jshint camelcase:true*/
 
       smssync.onReceive(sms, function (error, reply, message) {
+        //assert reply
+        expect(reply).to.exist;
+        expect(reply.to).to.exist;
+        expect(reply.to).to.be.equal(sms.from);
+        expect(reply.message).to.exist;
+        expect(reply.uuid).to.exist;
+
         //assert
         expect(error).to.not.exist;
         expect(message).to.exist;
