@@ -17,7 +17,7 @@ mongoose.Promise = global.Promise;
 
 before(function (done) {
   //setup database
-  mongoose.connect('mongodb://localhost/open311-push', done);
+  mongoose.connect('mongodb://localhost/open311-smssync', done);
 });
 
 
