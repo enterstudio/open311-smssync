@@ -138,10 +138,18 @@ exports.queue = function (message) {
   message.queueName = exports.queueName;
   message.mode = exports.Message.SEND_MODE_PULL;
   message.type = exports.Message.TYPE_SMS;
+  message.state = exports.Message.STATE_UNKNOWN;
+
   //ensure from is set-ed
   if (!message.from) {
     message.from = exports.options.from;
   }
+
+  //ensure is an instance of message
+  if (!(message instanceof exports.Message)) {
+    message = new exports.Message(message);
+  }
+
   message.queue();
 };
 

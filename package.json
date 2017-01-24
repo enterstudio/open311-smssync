@@ -47,6 +47,6 @@
     "lodash": "^4.17.4",
     "node-gcm": "^0.14.4",
     "open311-messages": "^0.5.2",
-    "smssync": "^0.2.1"
+    "smssync": "^0.2.2"
   }
 }
