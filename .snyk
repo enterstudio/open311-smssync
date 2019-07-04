@@ -1,0 +1,38 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - open311-messages > kue > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - open311-messages > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - kue > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - async > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - smssync > async > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - smssync > express-respond > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - open311-messages > async > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - smssync > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - open311-messages > mongoose > async > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - kue > pug > pug-code-gen > constantinople > babel-types > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - kue > pug > pug-filters > constantinople > babel-types > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - open311-messages > kue > pug > pug-filters > constantinople > babel-types > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - kue > pug > pug-code-gen > pug-attrs > constantinople > babel-types > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - open311-messages > kue > pug > pug-code-gen > constantinople > babel-types > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
+    - open311-messages > kue > pug > pug-code-gen > pug-attrs > constantinople > babel-types > lodash:
+        patched: '2019-07-04T06:48:12.566Z'
