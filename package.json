@@ -6,7 +6,9 @@
   "scripts": {
     "test": "grunt test",
     "integration": "npm link . && npm link open311-smssync && grunt integration",
-    "example": "npm link . && npm link open311-smssync && node examples/index.js"
+    "example": "npm link . && npm link open311-smssync && node examples/index.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -47,6 +49,8 @@
     "lodash": "^4.17.4",
     "node-gcm": "^0.14.4",
     "open311-messages": "^0.5.2",
-    "smssync": "^0.2.2"
-  }
+    "smssync": "^0.2.2",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
